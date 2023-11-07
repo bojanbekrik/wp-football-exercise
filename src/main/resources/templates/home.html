@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<h1>home page</h1>
+
+<div style="font-size: 20px">
+    Go to <a th:href="@{/register}">register</a>
+</div>
+
+<div style="padding-top: 50px">
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="f : ${footballers}">
+        <td th:text="${f.id}"></td>
+        <td th:text="${f.name}"></td>
+        <td>
+            <a th:href="@{/deleteFootballer/{id} (id=${f.id})}">Delete</a>
+            <a th:href="@{/editFootballer/{id} (id=${f.id})}">Edit</a>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</div>
+
+</body>
+</html>

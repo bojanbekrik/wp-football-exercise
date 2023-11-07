@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<h1>Register</h1>
+
+<div style="font-size: 20px">
+    Go to <a th:href="@{/home}">home</a>
+</div>
+
+<form th:method="post" th:action="@{/save}">
+<h2>New footballer</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+
+    <button type="submit">submit</button>
+
+</form>
+
+</body>
+</html>
